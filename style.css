@@ -176,7 +176,8 @@ main {
 }
 
 .hero-copy {
-    flex: 1 1 55%;
+    width: 100%;
+    max-width: 760px;
 }
 
 .hero-eyebrow {
@@ -263,86 +264,6 @@ main {
 .hero-note span {
     margin-right: 6px;
     color: #f2c879;
-}
-
-.hero-art {
-    position: relative;
-    min-height: 300px;
-    flex: 1 1 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-orbit {
-    position: absolute;
-    width: 270px;
-    height: 270px;
-    border: 1px solid rgba(223, 241, 233, 0.16);
-    border-radius: 50%;
-    box-shadow: 0 0 0 28px rgba(223, 241, 233, 0.035), 0 0 0 58px rgba(223, 241, 233, 0.025);
-}
-
-.hero-book {
-    position: absolute;
-    width: 158px;
-    height: 220px;
-    padding: 22px 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 5px 14px 14px 5px;
-    box-shadow: 12px 18px 35px rgba(5, 30, 27, 0.32);
-}
-
-.hero-book span {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: bold;
-    line-height: 1.08;
-}
-
-.hero-book small {
-    font-size: 7px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.hero-book-back {
-    transform: translate(38px, -9px) rotate(11deg);
-    background: linear-gradient(145deg, #e68460, #bd5944);
-    color: #fff8ec;
-}
-
-.hero-book-front {
-    transform: translate(-35px, 13px) rotate(-9deg);
-    background:
-        linear-gradient(90deg, rgba(10, 51, 46, 0.18) 0 9px, transparent 9px),
-        linear-gradient(145deg, #f1ce8b, #dba956);
-    color: #17443e;
-}
-
-.hero-book-front span {
-    font-size: 21px;
-}
-
-.hero-spark {
-    position: absolute;
-    color: #f2c879;
-}
-
-.hero-spark-one {
-    top: 32px;
-    right: 14%;
-    font-size: 26px;
-}
-
-.hero-spark-two {
-    bottom: 34px;
-    left: 10%;
-    font-size: 20px;
 }
 
 .project-footer {
@@ -751,10 +672,6 @@ aside ul li a:focus {
         font-size: 34px;
     }
 
-    .hero-art {
-        min-height: 260px;
-        transform: scale(0.88);
-    }
 }
 
 @media (max-width: 760px) {
@@ -819,7 +736,7 @@ aside ul li a:focus {
     }
 
     .hero-banner h1 {
-        font-size: 58px;
+        font-size: 46px;
     }
 
     .auth-page h2 {
@@ -843,11 +760,6 @@ aside ul li a:focus {
         margin-top: 18px;
     }
 
-    .hero-art {
-        min-height: 240px;
-        margin-top: 8px;
-        transform: scale(0.82);
-    }
 }
 
 @media (max-width: 560px) {
@@ -895,6 +807,6 @@ aside ul li a:focus {
 
 @media (max-width: 400px) {
     .hero-banner h1 {
-        font-size: 42px;
+        font-size: 40px;
     }
 }
