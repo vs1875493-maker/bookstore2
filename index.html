@@ -20,7 +20,7 @@
             <a href="#login">Login</a>
             <a href="#registration">Registration</a>
             <a href="#cse">Catalogue</a>
-            <a href="#cart">Cart</a>
+            <a href="#cart">Cart <span id="cart-count" aria-label="0 items in cart">0</span></a>
         </nav>
     </header>
 
@@ -42,23 +42,28 @@
             <!-- HOME PAGE -->
             <div id="home" class="page-content">
                 <div class="hero-banner">
-                    <h1>Welcome to the Online Bookstore</h1>
-                    <h3>GL Bajaj Institute of Technology & Management</h3>
-                    <p>Browse through our wide collection of engineering and academic textbooks ranging from Computer Science to Civil Engineering.</p>
-                </div>
-
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3 class="card-title-blue">💻 CSE & ECE</h3>
-                        <p>Find core programming, web design guides, and electronics literature.</p>
+                    <div class="hero-copy">
+                        <span class="hero-eyebrow">GL BAJAJ INSTITUTE OF TECHNOLOGY &amp; MANAGEMENT</span>
+                        <h1>Find your next<br><span>big idea.</span></h1>
+                        <p>Your campus bookstore for the books, knowledge, and inspiration behind every great engineering journey.</p>
+                        <div class="hero-actions">
+                            <a class="hero-button hero-button-primary" href="#cse">Explore the catalogue <span aria-hidden="true">→</span></a>
+                            <a class="hero-button hero-button-secondary" href="#registration">Join the bookstore</a>
+                        </div>
+                        <div class="hero-note"><span aria-hidden="true">✦</span> Learn more. Build what’s next.</div>
                     </div>
-                    <div class="info-card">
-                        <h3 class="card-title-orange">⚡ EEE & Civil</h3>
-                        <p>Explore circuits, power systems, and structural mechanics books.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3 class="card-title-gray">🛒 Quick Cart</h3>
-                        <p>Add titles instantly and manage your academic orders seamlessly.</p>
+                    <div class="hero-art" aria-hidden="true">
+                        <div class="hero-orbit"></div>
+                        <div class="hero-book hero-book-back">
+                            <span>IDEAS<br>IN MOTION</span>
+                            <small>ENGINEERING • DESIGN • FUTURE</small>
+                        </div>
+                        <div class="hero-book hero-book-front">
+                            <span>THE<br>POWER OF<br>KNOWING</span>
+                            <small>GL BAJAJ BOOKS</small>
+                        </div>
+                        <div class="hero-spark hero-spark-one">✦</div>
+                        <div class="hero-spark hero-spark-two">✳</div>
                     </div>
                 </div>
 
@@ -196,93 +201,88 @@
             </div>
 
             <!-- LOGIN PAGE -->
-            <div id="login" class="page-content">
-                <h2>Login Page</h2>
-                <hr><br>
-                <form>
+            <div id="login" class="page-content auth-page auth-login">
+                <span class="auth-eyebrow">WELCOME BACK</span>
+                <h2>Good to see you again.</h2>
+                <p class="auth-intro">Sign in to continue your learning journey and keep your bookstore activity in one place.</p>
+                <form class="auth-form">
                     <div class="form-group">
                         <label for="login-username">User Name:</label>
-                        <input type="text" id="login-username" required>
+                        <input type="text" id="login-username" placeholder="Enter your username" autocomplete="username" required>
                     </div>
                     <div class="form-group">
                         <label for="login-password">Password:</label>
-                        <input type="password" id="login-password" required>
+                        <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required>
                     </div>
                     <button type="submit" class="btn-submit">Submit</button>
                     <button type="reset" class="btn-reset">Reset</button>
                 </form>
+                <p class="auth-switch">New to the bookstore? <a href="#registration">Create an account</a></p>
             </div>
 
             <!-- CART PAGE -->
             <div id="cart" class="page-content">
                 <h2>Shopping Cart</h2>
                 <hr>
-                <table>
+                <p id="cart-status" role="status" aria-live="polite"></p>
+                <p id="cart-empty">Your cart is empty. Explore the catalogue to add a book.</p>
+                <table id="cart-table" hidden>
                     <thead>
                         <tr>
                             <th>Book Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Amount</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="cart-items"></tbody>
+                    <tfoot>
                         <tr>
-                            <td>Mastering Java 2</td>
-                            <td>$35.5</td>
-                            <td>2</td>
-                            <td>$71.0</td>
+                            <th colspan="4">Total Amount</th>
+                            <th id="cart-total">$0.00</th>
                         </tr>
-                        <tr>
-                            <td>XML 1.1 Bible</td>
-                            <td>$40.5</td>
-                            <td>1</td>
-                            <td>$40.5</td>
-                        </tr>
-                        <tr>
-                            <th colspan="3">Total Amount</th>
-                            <th>$111.5</th>
-                        </tr>
-                    </tbody>
+                    </tfoot>
                 </table>
             </div>
 
             <!-- REGISTRATION PAGE -->
-            <div id="registration" class="page-content">
-                <h2>Registration Form</h2>
-                <hr><br>
-                <form>
+            <div id="registration" class="page-content auth-page auth-registration">
+                <span class="auth-eyebrow">START YOUR NEXT CHAPTER</span>
+                <h2>Create your account.</h2>
+                <p class="auth-intro">Join the GL Bajaj bookstore community and make it easier to find your next great read.</p>
+                <form class="auth-form">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name">
+                        <input type="text" id="name" placeholder="Your full name" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" id="password">
+                        <input type="password" id="password" placeholder="Create a password" autocomplete="new-password">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail ID:</label>
-                        <input type="text" id="email">
+                        <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
-                        <input type="text" id="phone">
+                        <input type="tel" id="phone" placeholder="Your phone number" autocomplete="tel">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-wide">
                         <label>Sex:</label>
                         <div class="form-group-inline">
                             <input type="radio" name="sex" value="Male" id="male" checked> <label for="male">Male</label>
                             <input type="radio" name="sex" value="Female" id="female"> <label for="female">Female</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-wide">
                         <label>Languages Known:</label>
                         <div class="form-group-inline">
                             <input type="checkbox" id="lang1"><label for="lang1">English</label>
                             <input type="checkbox" id="lang2"><label for="lang2">Hindi</label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-wide">
                         <label for="address">Address:</label>
                         <textarea id="address" rows="4"></textarea>
                     </div>
@@ -293,6 +293,7 @@
 
         </main>
     </div>
-
+    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>
